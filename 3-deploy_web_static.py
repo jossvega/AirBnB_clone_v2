@@ -10,9 +10,11 @@ def do_pack():
     """ function that packs archives """
     local('mkdir -p versions')
     date = datetime.now()
-    file_tar = local('tar -cvzf versions/web_static_{}{}{}{}{}{}.tgz web_static'
-                   .format(date.year, date.month, date.day,
-                           date.hour, date.minute, date.second), capture=True)
+    file_tar = local('tar - cvzf versions/web_static_{}{}{}{}{}{}
+                     .tgz web_static'
+                     .format(date.year, date.month, date.day,
+                             date.hour, date.minute, date.second),
+                     capture=True)
     if file_tar.succeeded:
         return file_tar
     return None
