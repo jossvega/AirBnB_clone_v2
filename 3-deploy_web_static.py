@@ -11,7 +11,7 @@ def do_pack():
     local('mkdir -p versions')
     date = datetime.now()
     file_tar = local('tar - cvzf versions/web_static_{}{}{}{}{}{}\
-        .tgz web_static'
+                     .tgz web_static'
                      .format(date.year, date.month, date.day,
                              date.hour, date.minute, date.second),
                      capture=True)
