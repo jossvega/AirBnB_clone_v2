@@ -6,14 +6,18 @@ from os.path import exists
 
 env.hosts = ['35.231.190.68', '34.75.255.60']
 
+
 def do_pack():
     """[summary]"""
     local('mkdir -p versions')
-    file_tar = local("tar -czvf versions/web_static_{}.tgz web_static/".format((
-        datetime.strftime(datetime.now(), "%Y%m%d%H%M%S"))), capture=True)
+    file_tar = local("tar -czvf versions/web_static_{}.tgz web_static/"
+                     .format((datetime.strftime(datetime.now(),
+                                                "%Y%m%d%H%M%S"))),
+                     capture=True)
     if file_tar.succeeded:
         return file_tar
     return None
+
 
 def do_deploy(archive_path):
     """[summary]"""
