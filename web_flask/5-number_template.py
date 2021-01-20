@@ -41,7 +41,7 @@ def python_text(text):
     return "Python {}".format(text)
 
 
-@app.route("/number/<int:num>", strict_slashes=False)
+@app.route("/number/<int:n>", strict_slashes=False)
 def number_route(n):
     """
     Return “n is a number” only if `num` is an integer
